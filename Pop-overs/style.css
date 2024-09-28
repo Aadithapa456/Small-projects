@@ -1,0 +1,105 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+}
+html {
+   font-size: 62.5%;
+}
+body {
+   height: 80vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+.btn {
+   padding: 2.2rem 6.6rem;
+   border: none;
+   border-radius: 8px;
+   transition: 0.6s;
+   font-size: 1.8rem;
+   font-weight: 400;
+   letter-spacing: 1.2px;
+}
+
+.open-btn:hover,
+.close-btn:hover {
+   background-color: #0999a3;
+   color: white;
+}
+.pop-over {
+   /* background-color: gray; */
+   color: white;
+   height: 100vh;
+   position: absolute;
+   width: 100vw;
+   top: 0;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   font-size: 4rem;
+}
+.pop-card-visible {
+   animation: fly-in 0.5s forwards;
+}
+@keyframes fly-in {
+   from {
+      transform: scale(0);
+      opacity: 0;
+   }
+   to {
+      transform: scale(1);
+      opacity: 1;
+   }
+}
+.pop-card-hide {
+   animation: fly-out 0.3s forwards;
+}
+@keyframes fly-out {
+   from {
+      transform: scale(1);
+      opacity: 1;
+   }
+   to {
+      transform: scale(0);
+      opacity: 0;
+   }
+}
+.pop-card {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   justify-content: center;
+   align-items: center;
+   background-color: royalblue;
+   width: 30%;
+   border-radius: 10px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   height: 250px;
+   padding: 1.4rem 2.6rem;
+}
+@media only screen and (max-width: 600px){
+    html{
+        font-size: 42.5%;
+    }
+    body{
+        height: 100vh;
+    }
+    .pop-card{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 780px){
+    html{
+        font-size: 48.5%;
+    }
+    body{
+        height: 100vh;
+        background-color: green;
+    }
+    .pop-card{
+        width: 80%;
+    }
+}
