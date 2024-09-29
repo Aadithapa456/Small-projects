@@ -1,0 +1,89 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Orbitron", sans-serif;
+}
+html {
+   font-size: 62.5%;
+}
+:root {
+   --main-color: #161925;
+}
+body {
+   height: 90vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #0d0f14;
+   transition: 0.3s;
+}
+.format-select {
+   padding: 1.4rem 0;
+}
+.format-select button {
+   padding: 0.4rem 1.2rem;
+   font-size: 1.1rem;
+   border: none;
+   background-color: #2a2d3c;
+   border-radius: 6px;
+   color: white;
+   transition: 0.5s;
+   margin: 0 0.5rem;
+}
+.format-select button:hover {
+   transform: translateY(-4px);
+   scale: 1.064;
+}
+.clock-container {
+   height: 20rem;
+   width: 55rem;
+   background-color: var(--main-color);
+   border-radius: 14px;
+   color: white;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+}
+.clock-main-details {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1rem 0;
+}
+.clock-container .clock-main-details div {
+   font-size: 7rem;
+   width: 10.4rem;
+   text-align: center;
+}
+.colon {
+   font-size: 5rem !important;
+   width: auto !important;
+   padding: 0 1rem;
+}
+.am-pm {
+   font-size: 3.4rem !important;
+   width: auto !important;
+   padding: 0 2.4rem;
+}
+.clock-container::before {
+   content: "";
+   position: absolute;
+   background-color: #2a2d3c;
+   width: 50rem;
+   height: 17rem;
+   z-index: -1;
+   top: 5.5rem;
+   right: -2.5rem;
+   border-radius: 14px;
+   opacity: 0.9;
+}
+@media only screen and (max-width: 600px) {
+   html {
+      font-size: 48.5%;
+   }
+   body {
+      height: 100vh;
+   }
+}
