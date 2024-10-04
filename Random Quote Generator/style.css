@@ -12,10 +12,10 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 100dvh;
+   height: 80vh;
 }
 .container {
-   width: 600px;
+   width: 60rem;
    background-color: white;
    border-radius: 8px;
    padding: 1.4rem 2.9rem;
@@ -76,6 +76,7 @@ body {
    margin: 2.4rem 0 2.4rem 0;
    padding: 0 5rem;
    align-items: center;
+   flex-wrap: wrap;
 }
 .footer select {
    padding: 1rem 2.2rem;
@@ -104,4 +105,23 @@ body {
 .footer button:hover {
    background-color: rgb(11, 128, 196);
    color: white;
+}
+@media only screen and (max-width: 600px){
+   html{
+      font-size: 42.5%;
+   }
+   body{
+      height: 100vh;
+   }
+   .footer{
+      flex-direction: column;
+      gap: 20px;
+   }
+   .footer-left button{
+     justify-self: flex-end;
+   }
+   .footer .footer-right button{
+      padding: 1.4rem 3.4rem;
+      font-size: 1.7rem;
+   }
 }
