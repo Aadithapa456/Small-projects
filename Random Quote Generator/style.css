@@ -75,6 +75,16 @@ body {
    justify-content: space-between;
    margin: 2.4rem 0 2.4rem 0;
    padding: 0 5rem;
+   align-items: center;
+}
+.footer select {
+   padding: 1rem 2.2rem;
+   border: none;
+   outline: none;
+}
+.footer select:focus {
+   border: none;
+   outline: none;
 }
 .footer button {
    border: none;
