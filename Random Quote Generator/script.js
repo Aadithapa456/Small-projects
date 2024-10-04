@@ -1,3 +1,5 @@
+import { API_KEY } from "/api_key.js";
+
 let quoteContainer = document.querySelector(".quote");
 let author = document.querySelector(".quote-author");
 let generateQuoteBtn = document.querySelector(".new-quote-btn");
@@ -11,7 +13,7 @@ async function fetchQuotes() {
          {
             method: "GET",
             headers: {
-               "X-Api-Key": "oe+5lXQ7Ryyu6lshrNHzSQ==Qsci9FoIpuewbxUy",
+               "X-Api-Key": `${API_KEY}`,
                "Content-Type": "application/json",
             },
          }
@@ -22,7 +24,6 @@ async function fetchQuotes() {
       }
 
       const result = await response.json();
-      console.log(result);
       changeQuote(result);
    } catch (error) {
       console.error("Error:", error.message);
@@ -38,6 +39,6 @@ copyBtn.addEventListener("click", async () => {
    try {
       await navigator.clipboard.writeText(quoteContainer.innerHTML);
    } catch (err) {
-      console.log(error.message);
+      console.log(err.message);
    }
 });
