@@ -1,0 +1,97 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", "Netflix Sans";
+}
+html {
+   font-size: 62.5%;
+}
+body {
+   background-color: rgb(60, 129, 185);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100dvh;
+}
+.container {
+   width: 600px;
+   background-color: white;
+   border-radius: 8px;
+   padding: 1.4rem 2.9rem;
+   font-size: 1.4rem;
+   box-shadow: 14px 13px 0 #000000;
+}
+.title {
+   font-size: 2.8rem;
+   font-weight: 600;
+   text-align: center;
+   padding: 0.8rem 2.4rem;
+}
+.quote-container {
+   margin: 4.5rem 1.4rem 2.2rem 1.4rem;
+   font-size: 2rem;
+   display: flex;
+   justify-content: center;
+   gap: 12px;
+   align-items: center; /* Align vertically */
+   gap: 12px;
+   flex-wrap: wrap;
+}
+.quote-container i {
+   align-self: flex-start;
+}
+.quote-container i:last-child {
+   align-self: flex-end;
+}
+.quote {
+   display: inline-block;
+   word-break: break-word;
+   max-width: 80%;
+   text-align: center;
+   max-height: 80%;
+}
+.quote-container i {
+   font-size: 1.8rem;
+}
+.quote-author {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   font-size: 1.4rem;
+   font-weight: 300;
+   margin-bottom: 5.4rem;
+   padding: 0.5rem 0.9rem;
+}
+.separator {
+   height: 2px;
+   opacity: 0.4;
+   width: 80%;
+   background-color: #333;
+   margin: auto;
+}
+.footer {
+   display: flex;
+   justify-content: space-between;
+   margin: 2.4rem 0 2.4rem 0;
+   padding: 0 5rem;
+}
+.footer button {
+   border: none;
+   transition: 0.8s;
+}
+.footer .footer-right button {
+   padding: 1rem 2.8rem;
+   border-radius: 18px;
+   font-size: 1.4rem;
+}
+.footer .footer-left button {
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   color: black;
+}
+.footer button:hover {
+   background-color: rgb(11, 128, 196);
+   color: white;
+}
