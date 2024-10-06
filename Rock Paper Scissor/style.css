@@ -2,36 +2,176 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: "Poppins";
+   font-family: "Poppins", sans-serif;
+   line-height: 1.6;
 }
-html{
-    font-size: 62.5%;
+
+html {
+   font-size: 62.5%; /* 1rem = 10px */
 }
-body{
-    background-color: #2f3542 ;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+body {
+   background-color: #2f3542;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem;
 }
-.game-container{
-    background-color: #ffff;
-    width: 600px;
-    /* height: 450px; */
-    display: flex;
-    justify-content: center;
-    border-radius: 18px;
+
+.game-container {
+   background-color: #ffff;
+   display: flex;
+   flex-direction: column;
+   padding: 2rem;
+   gap: 2rem;
+   border-radius: 18px;
+   box-shadow: 18px 14px 0px 0 #000;
+   max-width: 90vw;
 }
-.game-image-container{
-    height: 50%;
-    width: 50%;
-    border: 2px dashed rgb(126, 140, 182);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
+
+.game-image-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 2rem;
 }
-.game-image-container img{
-    width: 70%;
-    object-fit: cover;
+
+.game-image-container div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 2px dashed rgb(126, 140, 182);
+   padding: 1rem;
+}
+
+.game-image-container img {
+   width: 100%;
+   max-width: 21rem;
+   object-fit: cover;
+}
+
+.game-image-container .vs-text {
+   border: none;
+   font-size: 3.5rem;
+   font-weight: 800;
+}
+
+.playing-area {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   max-width: 600px;
+   margin: 0 auto;
+   align-items: center;
+}
+
+.playing-area .selection-area select {
+   padding: 1.3rem 4.4rem;
+   border: none;
+   font-size: 1.6rem;
+   background-color: rgb(105, 126, 192);
+   color: white;
+   border-radius: 14px;
+}
+
+.playing-area select:focus {
+   border: none;
+   outline: none;
+}
+
+.playing-area .start-area button {
+   padding: 1.3rem 4.4rem;
+   border: none;
+   border-radius: 14px;
+   background-color: rgb(105, 126, 192);
+   color: white;
+   transition: 0.7s;
+}
+
+.playing-area .start-area button:hover {
+   background-color: rgb(66, 80, 126);
+   transform: translateY(-4px);
+}
+
+.result {
+   background-color: rgb(91, 98, 119);
+   padding: 1.4rem 2.8rem;
+   color: white;
+   font-size: 1.4rem;
+   letter-spacing: 0.9px;
+   border-radius: 19px;
+   margin: 1.2rem 0;
+}
+.ai-image,
+.user-image {
+   display: flex;
+   flex-direction: column;
+}
+figcaption {
+   font-size: 1.6rem;
+   font-weight: 900;
+}
+@media only screen and (max-width: 900px) {
+   html {
+      font-size: 56.25%; /* Adjust to 9px base font-size */
+   }
+
+   .game-container {
+      padding: 1.6rem;
+      gap: 1.5rem;
+   }
+
+   .playing-area {
+      flex-direction: column;
+      width: 90%;
+      gap: 1.5rem;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   html {
+      font-size: 50%; /* Adjust to 8px base font-size */
+   }
+
+   body {
+      flex-direction: column;
+      padding: 1rem;
+   }
+
+   .game-container {
+      width: 95%;
+      margin-top: 3rem;
+   }
+
+   .game-image-container {
+      flex-direction: column;
+      gap: 1.5rem;
+   }
+
+   .game-image-container img {
+      width: 75%;
+      max-width: 20rem;
+   }
+
+   .playing-area {
+      width: 100%;
+      gap: 2rem;
+   }
+}
+
+@media only screen and (max-width: 400px) {
+   html {
+      font-size: 45%; /* Adjust to 7.5px base font-size */
+   }
+
+   .game-container {
+      gap: 1rem;
+      padding: 1rem;
+   }
+
+   .game-image-container img {
+      width: 100%;
+   }
 }
