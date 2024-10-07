@@ -12,6 +12,9 @@
 .red {
    color: red;
 }
+.green{
+   color:#28a745;
+}
 html {
    font-size: 62.5%; /* 1rem = 10px */
 }
