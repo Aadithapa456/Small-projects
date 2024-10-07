@@ -1,12 +1,13 @@
+// Accessing DOM Elements
 let imageContainer = document.querySelector("#image-ai");
 let userSelectionImage = document.querySelector("#image-user");
 let startBtn = document.querySelector(".start-btn");
 let userSelection = document.querySelector(".select-item");
 let resultPopUp = document.querySelector(".pop-up");
 let closePopUpBtn = document.querySelector("#close-btn");
-let winOrLoss = document.querySelector(".result-info");
+let resultInfo = document.querySelector(".result-info");
 let resultTitle = document.querySelector(".result-title");
-let imageChanger;
+let imageChanger; // Interval ID for image changer
 let images = {
    0: "images/rock.png",
    1: "images/paper.png",
@@ -37,10 +38,10 @@ function changeImage() {
       currentIndex = (currentIndex + 1) % totalImages; // Cycle to the next image, reset after the last image
    }, 400); // Change image every 400 milliseconds
 
-   let random = Math.floor(Math.random() * 3);
+   let random = Math.floor(Math.random() * 3); //Generates a random number from 0 to 2
    setTimeout(() => {
       clearInterval(imageChanger);
-      imageContainer.src = images[random];
+      imageContainer.src = images[random]; // Sets the CPU selection using random number generated above
       startGame(random);
    }, 2000);
    if (userSelection.value == "R") {
@@ -54,14 +55,15 @@ function changeImage() {
 // changeImage();
 function startGame(random) {
    let userInput = userSelection.value;
-   let checkWhoWon = userInput + gameOptions[random];
-   console.log(checkWhoWon);
+   let checkWhoWon = userInput + gameOptions[random]; // Concatinates user input and CPU selection e.g: RR,RP
    // for (const pattern in winningPattern) {
    //    if (checkWhoWon == pattern) {
    //       // console.log(winningPattern[pattern]);
    //       showResult(winningPattern[pattern]);
    //    }
    // }
+
+   // Checks if the current pattern is present in the pre-defined winning pattern or not
    if (winningPattern.hasOwnProperty(checkWhoWon)) {
       showResult(winningPattern[checkWhoWon]);
    } else {
@@ -69,21 +71,20 @@ function startGame(random) {
    }
 }
 function showResult(didIWin) {
-   console.log(didIWin);
    if (didIWin == "Win") {
       resultTitle.innerHTML = `Congratulations!`;
-      winOrLoss.innerHTML = `You just <span class="green">Won 🎉</span>`;
+      resultInfo.innerHTML = `You just <span class="green">Won 🎉</span>`;
       showPopUp();
    } else if (didIWin == "Loss") {
       resultTitle.innerHTML = `Ooops....`;
-      winOrLoss.innerHTML = `You<span class = "red">Lost</span>`;
+      resultInfo.innerHTML = `You<span class = "red">Lost</span>`;
       showPopUp();
    } else if (didIWin == "Draw") {
       resultTitle.innerHTML = `Ooops....`;
-      winOrLoss.innerHTML = `Draw, Try again!`;
+      resultInfo.innerHTML = `Draw, Try again!`;
       showPopUp();
    } else {
-      winOrLoss.innerHTML = `Unexpected Game Outcome`;
+      resultInfo.innerHTML = `Unexpected Game Outcome`;
    }
 }
 function showPopUp() {
@@ -93,11 +94,12 @@ function showPopUp() {
       resultPopUp.classList.remove("fly-out");
    }, 800);
 }
-startBtn.addEventListener("click", changeImage);
 closePopUpBtn.addEventListener("click", () => {
    resultPopUp.classList.remove("fly-in");
    resultPopUp.classList.add("fly-out");
    setTimeout(() => {
       resultPopUp.style.display = "none";
-   }, 300);
+   }, 300); //Added 300ms delay for smoother animation
 });
+// Event Listeners
+startBtn.addEventListener("click", changeImage);
