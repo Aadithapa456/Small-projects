@@ -15,34 +15,44 @@
 <body>
     <div class="game-container">
         <div class="game-image-container">
-            <div class="user-image">
-                <img src="images/rock.png" alt="Paper" id="image-user">
-                <figcaption>User</figcaption>
+            <div class="ai-image">
+                <img src="images/paper.png" alt="Paper" id="image-ai">
+                <figcaption>Computer</figcaption>
             </div>
             <div class="vs-text">
                 Vs
             </div>
-            <div class="ai-image">
-                <img src="images/paper.png" alt="Paper" id="image-ai">
-                <figcaption>Computer</figcaption>
+            <div class="user-image">
+                <img src="images/rock.png" alt="Paper" id="image-user">
+                <figcaption>User</figcaption>
             </div>
         </div>
         <div class="playing-area">
             <div class="selection-area">
                 <select class="select-item">
-                    <option value="Rock">Rock</option>
-                    <option value="Paper">Paper</option>
-                    <option value="Scissor">Scissor</option>
+                    <option value="R">Rock</option>
+                    <option value="P">Paper</option>
+                    <option value="S">Scissor</option>
                 </select>
             </div>
             <div class="start-area">
                 <button class="start-btn">Play Game</button>
             </div>
         </div>
-        <div class="result">
+        <!-- <div class="result">
             Enter Something first
+        </div> -->
+    </div>
+    <div class="pop-up">
+        <div class="result">
+            <div class="result-title">Congratulations</div>
+            <div class="result-info">
+                You Just <span class="result-highlight"> Won 🎉</span>
+            </div>
+            <div class="close-pop-up">
+                <button id="close-btn">Close</button>
+            </div>
         </div>
-
     </div>
     <script src="script.js"></script>
 </body>
