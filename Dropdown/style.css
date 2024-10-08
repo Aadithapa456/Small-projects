@@ -1,0 +1,83 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins";
+}
+html {
+   font-size: 62.5%;
+}
+body {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/* .container {
+   background-color: azure;
+   width: 450px;
+   height: 450px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+
+.dropdown-container  {
+   border-radius: 14px;
+   background-color: rgb(93, 149, 199);
+   font-size: 1.8rem;
+   height: 4rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.dropdown-sub-items {
+   top: 240px;
+   padding: 1rem 4.8rem 1rem 3.2rem;
+   border-radius: 14px;
+   font-size: 1.8rem;
+   background-color: rgb(93, 149, 199);
+} */
+.container {
+   position: relative;
+}
+
+.dropdown-container {
+   display: inline-block;
+   position: relative;
+}
+.dropdown-container > div{
+    /* width: 120px; */
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.dropdown-main-item {
+   background-color: #007bff; /* Primary color */
+   color: white;
+   padding: 10px 20px;
+   cursor: pointer;
+   border-radius: 5px;
+   font-size: 1.5rem;
+}
+
+.dropdown-sub-items {
+   position: absolute;
+   background-color: white;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   margin-top: 5px;
+   display: none;
+   flex-direction: column;
+   z-index: 1000; /* Ensures dropdown appears above other content */
+}
+
+.dropdown-items {
+   padding: 10px 20px;
+   cursor: pointer;
+}
+
+.dropdown-items:hover {
+   background-color: #f1f1f1; /* Light gray background on hover */
+}
