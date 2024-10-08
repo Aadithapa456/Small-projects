@@ -3,15 +3,11 @@ let selectionItems = document.querySelector(".dropdown-sub-items");
 let dropDownItems = document.querySelectorAll(".dropdown-items");
 console.log(dropDownItems);
 let mainItem = document.querySelector(".dropdown-main-item");
-let isVisible = false;
-dropDownContainer.addEventListener("click", () => {
-   if (!isVisible) {
-      selectionItems.style.display = "flex";
-      isVisible = true;
-   } else {
-      selectionItems.style.display = "none";
-      isVisible = false;
-   }
+dropDownContainer.addEventListener("mouseover", () => {
+   selectionItems.style.display = "flex";
+});
+selectionItems.addEventListener("mouseleave", () => {
+   selectionItems.style.display = "none"; // Hide the dropdown when the mouse leaves sub-items
 });
 dropDownItems.forEach((item) => {
    item.addEventListener("click", () => {
