@@ -9,10 +9,9 @@ dropDownContainer.addEventListener("mouseover", () => {
 selectionItems.addEventListener("mouseleave", () => {
    selectionItems.style.display = "none"; // Hide the dropdown when the mouse leaves sub-items
 });
-dropDownItems.forEach((item) => {
+function changeMainItem(item) {
+   console.log(item);
    item.addEventListener("click", () => {
-      console.log(item);
-
       let currentMainItem = mainItem.innerHTML;
       let currentSubItem = item.innerHTML;
       mainItem.innerHTML = item.innerHTML;
@@ -20,6 +19,10 @@ dropDownItems.forEach((item) => {
       const newItem = document.createElement("div");
       newItem.classList.add("dropdown-items");
       newItem.innerHTML = currentMainItem;
-      selectionItems.appendChild(newItem);
+      selectionItems.append(newItem);
+      changeMainItem(newItem);
    });
+}
+dropDownItems.forEach((item) => {
+   addClickListenerToItem(item);
 });
