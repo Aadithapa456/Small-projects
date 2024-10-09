@@ -12,8 +12,8 @@
 .red {
    color: red;
 }
-.green{
-   color:#28a745;
+.green {
+   color: #28a745;
 }
 html {
    font-size: 62.5%; /* 1rem = 10px */
@@ -86,41 +86,59 @@ figcaption {
    margin: 0 auto 2rem auto;
    align-items: center;
 }
-
-.playing-area .selection-area select {
-   padding: 1.3rem 4.4rem;
-   border: none;
-   font-size: 1.6rem;
-   background-color: var(--btn-color);
+/* Dropdown Styling */
+.dropdown-container {
+   display: inline-block;
+   position: relative;
+   user-select: none;
+}
+.dropdown-container > div {
+   width: 14rem;
+   text-align: center;
+   font-size: 1.3rem;
+}
+.dropdown-main-item {
+   background-color: var(--btn-color); /* Primary color */
    color: white;
-   border-radius: 14px;
+   padding: 1.3rem 5.4rem;
+   cursor: pointer;
+   border-radius: 6px;
+   font-size: 1.5rem;
 }
-
-.playing-area select:focus {
-   border: none;
-   outline: none;
+.dropdown-sub-items {
+   position: absolute;
+   background-color: white;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   margin-top: 5px;
+   display: none;
+   flex-direction: column;
+   z-index: 1000; /* Ensures dropdown appears above other content */
 }
-
+.dropdown-items {
+   padding: 10px 20px;
+   cursor: pointer;
+}
+.dropdown-items:hover {
+   background-color: #f1f1f1; /* Light gray background on hover */
+}
 .playing-area .start-area button {
    padding: 1.3rem 4.4rem;
    border: none;
-   border-radius: 14px;
+   border-radius: 6px;
    background-color: var(--btn-color);
    color: white;
    transition: 0.7s;
 }
-
 .playing-area .start-area button:hover {
    background-color: var(--btn-hover-color);
    transform: translateY(-4px);
 }
-
 .ai-image,
 .user-image {
    display: flex;
    flex-direction: column;
 }
-
 .pop-up {
    height: 100vh;
    width: 100vw;
@@ -189,6 +207,7 @@ figcaption {
 .fly-out {
    animation: scale-out 0.5s linear;
 }
+
 @keyframes scale-in {
    from {
       transform: rotateX(90deg) scale(0);

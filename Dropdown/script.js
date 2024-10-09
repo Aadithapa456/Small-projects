@@ -1,19 +1,18 @@
 let dropDownContainer = document.querySelector(".dropdown-container");
 let selectionItems = document.querySelector(".dropdown-sub-items");
 let dropDownItems = document.querySelectorAll(".dropdown-items");
+let isVisible
 console.log(dropDownItems);
 let mainItem = document.querySelector(".dropdown-main-item");
-dropDownContainer.addEventListener("mouseover", () => {
-   selectionItems.style.display = "flex";
+dropDownContainer.addEventListener("click", () => {
+   isVisible = !isVisible; // Toggle the visibility state
+   selectionItems.style.display = isVisible ? "flex" : "none"; // Set display based on visibility state
 });
-selectionItems.addEventListener("mouseleave", () => {
-   selectionItems.style.display = "none"; // Hide the dropdown when the mouse leaves sub-items
-});
+
 function changeMainItem(item) {
    console.log(item);
    item.addEventListener("click", () => {
       let currentMainItem = mainItem.innerHTML;
-      let currentSubItem = item.innerHTML;
       mainItem.innerHTML = item.innerHTML;
       item.remove();
       const newItem = document.createElement("div");
@@ -24,5 +23,11 @@ function changeMainItem(item) {
    });
 }
 dropDownItems.forEach((item) => {
-   addClickListenerToItem(item);
+   changeMainItem(item);
+});
+document.addEventListener("click", (event) => {
+   if (!dropDownContainer.contains(event.target)) {
+      selectionItems.style.display = "none";
+      isVisible = false; // Update visibility state
+   }
 });

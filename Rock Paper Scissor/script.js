@@ -31,7 +31,43 @@ let winningPattern = {
 };
 let currentIndex = 0;
 let totalImages = Object.keys(images).length;
+//User selection Dropdown
+let dropDownContainer = document.querySelector(".dropdown-container");
+let selectionItems = document.querySelector(".dropdown-sub-items");
+let dropDownItems = document.querySelectorAll(".dropdown-items");
+let isVisible
+console.log(dropDownItems);
+let mainItem = document.querySelector(".dropdown-main-item");
+dropDownContainer.addEventListener("click", () => {
+   isVisible = !isVisible; // Toggle the visibility state
+   selectionItems.style.display = isVisible ? "flex" : "none"; // Set display based on visibility state
+});
+
+function changeMainItem(item) {
+   console.log(item);
+   item.addEventListener("click", () => {
+      let currentMainItem = mainItem.innerHTML;
+      mainItem.innerHTML = item.innerHTML;
+      item.remove();
+      const newItem = document.createElement("div");
+      newItem.classList.add("dropdown-items");
+      newItem.innerHTML = currentMainItem;
+      selectionItems.append(newItem);
+      changeMainItem(newItem);
+   });
+}
+dropDownItems.forEach((item) => {
+   changeMainItem(item);
+});
+document.addEventListener("click", (event) => {
+   if (!dropDownContainer.contains(event.target)) {
+      selectionItems.style.display = "none";
+      isVisible = false; // Update visibility state
+   }
+});
+
 function changeImage() {
+   let userInput = mainItem.textContent.trim().slice(0, 1);
    clearInterval(imageChanger);
    imageChanger = setInterval(() => {
       imageContainer.src = images[currentIndex]; // Set the current image source
@@ -42,19 +78,19 @@ function changeImage() {
    setTimeout(() => {
       clearInterval(imageChanger);
       imageContainer.src = images[random]; // Sets the CPU selection using random number generated above
-      startGame(random);
+      startGame(random,userInput);
    }, 2000);
-   if (userSelection.value == "R") {
+   if (userInput == "R") {
       userSelectionImage.src = images[0];
-   } else if (userSelection.value == "P") {
+   } else if (userInput == "P") {
       userSelectionImage.src = images[1];
    } else {
       userSelectionImage.src = images[2];
    }
 }
 // changeImage();
-function startGame(random) {
-   let userInput = userSelection.value;
+function startGame(random, userInput) {
+   console.log(userInput);
    let checkWhoWon = userInput + gameOptions[random]; // Concatinates user input and CPU selection e.g: RR,RP
    // for (const pattern in winningPattern) {
    //    if (checkWhoWon == pattern) {

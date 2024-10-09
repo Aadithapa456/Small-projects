@@ -28,12 +28,14 @@
             </div>
         </div>
         <div class="playing-area">
-            <div class="selection-area">
-                <select class="select-item">
-                    <option value="R">Rock</option>
-                    <option value="P">Paper</option>
-                    <option value="S">Scissor</option>
-                </select>
+            <div class="dropdown-container">
+                <div class="dropdown-main-item" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                    Rock
+                </div>
+                <div class="dropdown-sub-items" role="menu">
+                    <div class="dropdown-items" role="menuitem" tabindex="0">Paper</div>
+                    <div class="dropdown-items" role="menuitem" tabindex="0">Scissor</div>
+                </div>
             </div>
             <div class="start-area">
                 <button class="start-btn">Play Game</button>
