@@ -16,7 +16,7 @@ body {
    height: 80vh;
    overflow: hidden;
 }
-.red{
+.red {
    color: #ff4d4d !important;
 }
 .container {
@@ -190,7 +190,7 @@ ul {
    z-index: 999;
    perspective: 1000px;
 }
-.result {
+.error {
    width: 40rem;
    display: none;
    padding: 3rem 2rem;
@@ -204,13 +204,13 @@ ul {
    flex-direction: column;
    align-items: center;
 }
-.result .result-title {
+.error .error-title {
    font-size: 3.2rem;
    margin-bottom: 1rem;
    letter-spacing: 1.8px;
    font-weight: 700;
 }
-.result .result-info {
+.error .error-info {
    margin: 3rem 0;
    font-size: 2.2rem;
    display: flex;
@@ -220,15 +220,15 @@ ul {
    color: #333333;
 }
 
-.result .result-highlight {
+.error .error-highlight {
    font-weight: 700;
    font-size: 2.4rem;
    color: #28a745;
 }
-.result .close-pop-up {
+.error .close-pop-up {
    margin: 2rem 0 1rem 0;
 }
-.result .close-pop-up button {
+.error .close-pop-up button {
    padding: 1.5rem 5rem;
    border: none;
    background-color: #f1f1f1;
@@ -236,16 +236,16 @@ ul {
    border-radius: 10px;
    font-size: 1.6rem;
    cursor: pointer;
-   transition: .4s;
+   transition: 0.4s;
 }
-.result .close-pop-up button:hover {
+.error .close-pop-up button:hover {
    background-color: #e0e0e0;
 }
 .scale-in {
-   animation: scale-in 0.5s linear forwards;
+   animation: scale-in 0.3s linear forwards;
 }
 .scale-out {
-   animation: scale-out 0.5s linear;
+   animation: scale-out 0.4s linear;
 }
 @keyframes scale-in {
    from {
@@ -274,7 +274,7 @@ ul {
    body {
       height: 100vh;
    }
-   .container{
+   .container {
       width: 56rem;
    }
    .footer {
@@ -291,5 +291,4 @@ ul {
    .footer-left {
       gap: 12rem;
    }
-
 }

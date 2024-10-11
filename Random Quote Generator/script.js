@@ -75,12 +75,12 @@ function showPopUp() {
       popUp.style.display = "flex";
       popUp.classList.add("scale-in");
       popUp.classList.remove("scale-out");
-   }, 800);
+   }, 300);
 }
 closePopUpBtn.addEventListener("click", () => {
    popUp.classList.remove("scale-in");
    popUp.classList.add("scale-out");
    setTimeout(() => {
       popUp.style.display = "none";
-   }, 300); //Added 300ms delay for smoother exit animation
+   }, 400); //Added 300ms delay for smoother exit animation
 });
