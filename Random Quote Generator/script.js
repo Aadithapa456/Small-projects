@@ -10,6 +10,7 @@ let mainItem = document.querySelector(".select");
 let options = document.querySelectorAll("#option li");
 let popUp = document.querySelector(".pop-up");
 let closePopUpBtn = document.querySelector("#close-btn");
+
 dropDownContainer.addEventListener("click", () => {
    dropDownContainer.classList.toggle("active");
    document.querySelector(".dropdown-options").classList.toggle("visible");
@@ -28,10 +29,10 @@ document.addEventListener("click", (e) => {
 
 async function fetchQuotes() {
    let currentCategoryValue = mainItem.innerHTML.trim();
+   // Shows error pop-up if user hasn't selected anything
    if (currentCategoryValue == "Select Category") {
       showPopUp();
    }
-   // console.log(currentCategoryValue);
    try {
       const response = await fetch(
          `https://api.api-ninjas.com/v1/quotes?category=${currentCategoryValue}`,
@@ -61,12 +62,14 @@ function changeQuote(result) {
    author.innerHTML = `-${result[0].author}`;
 }
 copyBtn.addEventListener("click", async () => {
+   // Copy to Clipboard functionality
    try {
       await navigator.clipboard.writeText(quoteContainer.innerHTML);
    } catch (err) {
       console.log(err.message);
    }
 });
+//Error Popup Card
 function showPopUp() {
    setTimeout(() => {
       popUp.style.display = "flex";
@@ -79,5 +82,5 @@ closePopUpBtn.addEventListener("click", () => {
    popUp.classList.add("scale-out");
    setTimeout(() => {
       popUp.style.display = "none";
-   }, 300); //Added 300ms delay for smoother animation
+   }, 300); //Added 300ms delay for smoother exit animation
 });
