@@ -64,7 +64,9 @@ function changeQuote(result) {
 copyBtn.addEventListener("click", async () => {
    // Copy to Clipboard functionality
    try {
-      await navigator.clipboard.writeText(quoteContainer.innerHTML);
+      await navigator.clipboard.writeText(
+         `${quoteContainer.innerHTML} \n\n ${author.innerHTML.trim()}`
+      );
    } catch (err) {
       console.log(err.message);
    }
