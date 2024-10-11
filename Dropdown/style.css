@@ -1,3 +1,4 @@
+/* Two Different Versions of Dropdown */
 * {
    margin: 0;
    padding: 0;
@@ -75,17 +76,31 @@ body {
    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
    cursor: pointer;
 }
-i{
-   transition:.5s;
+.select{
+   width: 16rem;
 }
-.dropdown-select-item.active i{
+i {
+   transition: 0.5s;
+}
+.dropdown-select-item.active i {
    transform: rotate(-180deg);
 }
 .dropdown-select-item:hover {
    background-color: #3b82f6;
 }
 .dropdown-options.visible {
+   animation: fly-in 0.5s forwards;
    display: block !important;
+}
+@keyframes fly-in {
+   from {
+      transform: translateY(-10px); /* Start slightly above */
+      opacity: 0; /* Fully transparent */
+   }
+   to {
+      transform: translateY(0); /* End at original position */
+      opacity: 1; /* Fully visible */
+   }
 }
 .dropdown-options {
    background-color: #1e293b;
