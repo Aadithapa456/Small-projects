@@ -1,0 +1,40 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   position: relative;
+}
+.mouse-trail {
+   background-color: rgba(0, 255, 255, 0.7);
+   width: 20px;
+   aspect-ratio: 1/1;
+   border-radius: 50%;
+   box-shadow: rgba(0, 255, 255, 0.4) 0px 0px 15px,
+      rgba(0, 0, 0, 0.3) 0px 4px 20px;
+   position: absolute;
+   transition: 0.1s;
+}
+.click {
+   animation: click 0.6s;
+}
+@keyframes click {
+   0% {
+      transform: scale(0.8);
+      background-color: rgba(0, 255, 255, 0.7);
+   }
+   50% {
+      transform: scale(1.2);
+      background-color: rgba(
+         0,
+         128,
+         255,
+         0.9
+      ); /* Transition to a darker blue */
+   }
+   100% {
+      transform: scale(1);
+      background-color: rgba(0, 255, 255, 0.7);/* Return to original color */
+   }
+}
