@@ -4,6 +4,9 @@
    box-sizing: border-box;
    font-family: "Poppins";
 }
+html {
+   font-size: 62.5%;
+}
 body {
    display: flex;
    justify-content: center;
@@ -18,8 +21,6 @@ h2 {
    font-style: 40px;
 }
 .box {
-   background-color: royalblue;
-   color: #f5f5f5;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -27,23 +28,96 @@ h2 {
    height: 200px;
    margin: 10px;
    border-radius: 10px;
-   box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
-   opacity: 0;
-   transition: 0.6s;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+   transition: 0.8s !important;
 }
 .box:hover {
-   box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-   transform: scale(1.05); /* Slight scale up for emphasis */
+   scale: 1.05;
+   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
-.box:nth-of-type(odd) {
-   background-color: #ff7043;
-   transform: translateX(100%);
+.visible {
+   transform: translateX(0) !important;
+   opacity: 1 !important;
+   filter: blur(0);
 }
-.box:nth-of-type(even) {
-   background-color: #ffb74d;
+.hidden {
+   opacity: 0;
    transform: translateX(-100%);
+   transition: 1s;
 }
-.box.visible {
-   transform: translateX(0);
-   opacity: 1;
+.box-1 {
+   transition-delay: 800ms;
+   background-color: #576574;
+}
+.box-2 {
+   transition-delay: 600ms;
+   background-color: #1e90ff;
+}
+
+.box-3 {
+   transition-delay: 400ms;
+   background-color: #3742fa;
+}
+
+.box-4 {
+   transition-delay: 200ms;
+   background-color: #7bed9f;
+}
+
+.hero {
+   background-color: #2f3542;
+   min-height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #f1f2f6;
+   font-size: 6.5rem;
+   font-weight: 400;
+}
+.cards {
+   background-color: #2d3436;
+   color: #f1f2f6;
+   min-height: 100vh;
+   width: 100vw;
+   display: grid;
+   /* align-content: center; */
+   justify-items: center;
+   font-size: 2.4rem;
+}
+.cards-title {
+   padding: 1.2rem 1.8rem;
+   align-self: center;
+   font-size: 3.8rem;
+   font-weight: 600;
+}
+.boxes {
+   display: flex;
+}
+.last {
+   background-color: #282d2e;
+   color: #f1f2f6;
+   min-height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 4.5rem;
+}
+@media (max-width: 768px) {
+   .box {
+      width: 95%; /* Adjust width for smaller screens */
+      font-size: 1.4rem; /* Smaller font size */
+   }
+
+   .hero {
+      font-size: 4rem; /* Smaller font size for hero text */
+   }
+}
+
+/* Media query for devices larger than 768px */
+@media (min-width: 769px) {
+   .hero {
+      font-size: 6rem; /* Larger font size for hero text */
+   }
 }

@@ -1,7 +1,8 @@
-const boxes = document.querySelectorAll(".box");
+const elements = document.querySelectorAll(".hidden");
 const observer = new IntersectionObserver(
    (entries) => {
       entries.forEach((entry) => {
+         console.log(entry.target);
          if (entry.isIntersecting) {
             entry.target.classList.add("visible");
          } else {
@@ -14,13 +15,13 @@ const observer = new IntersectionObserver(
       rootMargin: "0px 0px -20% 0px",
    }
 );
-boxes.forEach((box) => {
-   observer.observe(box);
+elements.forEach((element) => {
+   observer.observe(element);
 });
 function getThreshold() {
    if (window.innerWidth <= 768) {
       return 0.2; // For mobile devices
    } else {
-      return 0.7; // For larger screens
+      return 0.6; // For larger screens
    }
 }
